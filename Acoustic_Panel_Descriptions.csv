@@ -1,0 +1,38 @@
+Name,Photo,Description,Pattern,Pattern Photo,Desc Pattern,Type,Attributes,Related Panel,Related Panel,Related Panel,Related Panel,Related Panel,Related Panel
+Studio Tainy,,"Floor to ceiling panels with curved edges, tuned resonating board, Owens Corning 703 Fiberglass filling and Guilford of Maine fabric.","Rectangle
+ Tiles",,Floor to ceiling design with horizontal pattern. Bass traps along the front if needed.,"Custom 
+ Panels","Floor to Ceiling, Rectangle, 
+ Curved Edges, Tuned Resonating Board, Custom Sizes, Fabric Finish.","Studio Tainy 
+ Roof",Studio B,Studio C,,,
+Studio Tainy Modular,,"Curved edge panel with tuned resonating board, Owens Corning 703 Fiberglass and Guilfor of Maine Fabric.",Modular,,No Pattern,Standard,"Curved Edges, Tuned Resonating Board, Standard Sizes, Fabric Finish.","Studio Tainy Roof 
+ Modular",Studio B Modular,Studio C Modular,24x48,24x24,12x48
+Studio Tainy Roof,,"Floor to ceiling panels with Interlaced wood pattern, Owens Corning 703 Fiberglass filling and Guilford of Maine fabric for the acoustic base.",Wood Grid,,Floor to ceiling design with horizontal pattern. Bass traps along the front if needed with a thicker acoustic base behind.,"Custom 
+ Panels","Floor to Ceiling, Rectangle, Square,
+ Straight Edges, Custom Sizes, Ceiling Cloud, Acoustic Base, Heavy, Naked Wood.",Studio Tainy,Studio B,Studio C,,,
+Studio Tainy Roof Modular,,"Interlaced square wood pattern with Ownes Corning Fiberglass acoustic base, and Guilford of Marine fabric.",Modular,,No Pattern,Standard,"Straight Edges, Standard Sizes, Square, Rectangle, Ceiling Cloud, Acoustic Base, Heavy, Naked Wood.","Studio Tainy
+  Modular",Studio B Modular,Studio C Modular,24x48,24x24,12x48
+Studio B,,"Floor to ceiling narrow panels with stright edges and flat front, resonating board, Owens Corning 703 Fiberglass filling and Guilford of Maine fabric. Lightweight.","Narrow Rectangle
+ Tiles",,Floor to ceiling design with narrow horizontal pattern. Bass traps along the front if needed.,"Custom 
+ Panels","Floor to Ceiling, Narrow Rectangle, 
+ Straight Edges, Tuned Resonating Board, Lightweight, Fabric Finish.","Studio Tainy 
+ Roof",Studio Tainy,Studio C,,,
+Studio B Modular,,Narrow rectangle tiles with a straight edge and flat front. Tuned resonating board with Owens Corning 703 Fiberglass filling and Guilford of Maine Fabric.,Modular,,Narrow Rectangle Patter*,Standard,"Narrow Rectangle, Straight Edge, Flat Front, Resonating Board, Lightweight, Fabric Finish.","Studio Tainy 
+ Modular","Studio Tainy Roof 
+ Modular",Studio C Modular,24x48,24x24,12x48
+Studio C,,"Floor to ceiling square panels with curved edges, tuned resonating board, Owens Corning 703 Fiberglass filling and Guilford of Maine fabric.","Square
+ Tiles",,Floor to ceiling design with Tiled square pattern. Bass traps along the front if needed.,"Custom 
+ Panels","Floor to Ceiling, Square, 
+ Curved Edges, Tuned Resonating Board, Custom Sizes, Fabric Finish.","Studio Tainy 
+ Roof",Studio B,Studio C,,,
+Studio C Modular,,"Curved edge square panel with tuned resonating board, Owens Corning 703 Fiberglass and Guilfor of Maine Fabric.",Modular,,Square Pattern*,Standard,"Curved Edges, Tuned Resonating Board, Standard Sizes, Square, Fabric Finish.","Studio Tainy 
+ Modular","Studio Tainy Roof 
+ Modular",Studio B Modular,Studio C Modular,24x24,12x48
+24x48,,"Rectangle Panel with a wood frame. Tuned resonating board front, Owens Corning 703 Fiberglass and Guilfor of Maine Fabric. Fabric Finish or Naked Wood Finish.",Modular,,No Pattern,Standard,"Rectangle, Straight Edge, Wood Frame, Tuned Resonating Board, Standard Sizes, Rectangle, Fabric Finish or Naked Wood Finish","Studio Tainy 
+ Modular","Studio Tainy Roof 
+ Modular",Studio B Modular,Studio C Modular,24x24,12x48
+24x24,,"Square Panel with a wood frame. Tuned resonating board front, Owens Corning 703 Fiberglass and Guilfor of Maine Fabric. Fabric Finish or Naked Wood Finish.",Modular,,No Pattern,Standard,"Square, Straight Edge, Wood Frame, Tuned Resonating Board, Standard Sizes, Rectangle, Fabric Finish or Naked Wood Finish","Studio Tainy 
+ Modular","Studio Tainy Roof 
+ Modular",Studio B Modular,Studio C Modular,24x48,12x48
+12x48,,"Narrow Rectangle Panels with a wood frame. Tuned resonating board front, Owens Corning 703 Fiberglass and Guilfor of Maine Fabric. Fabric Finish or Naked Wood Finish.",Modular,,No Pattern,Standard,"Narrow Rectangle, Straight Edge, Wood Frame, Tuned Resonating Board, Standard Sizes, Rectangle, Fabric Finish or Naked Wood Finish","Studio Tainy 
+ Modular","Studio Tainy Roof 
+ Modular",Studio B Modular,Studio C Modular,24x48,24x24

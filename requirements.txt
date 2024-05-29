@@ -1,0 +1,14 @@
+Flask
+requests
+python-dotenv
+pandas
+openai
+google-cloud-dialogflow
+tabulate
+werkzeug==0.16.0
+MarkupSafe==2.0.1
+celery
+gunicorn
+flask_cors
+json
+csv
