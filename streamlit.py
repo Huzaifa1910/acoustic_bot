@@ -13,7 +13,7 @@ client = OpenAI(api_key=os.getenv("OPEN_AI"))
 
 # Function to get the assistant
 def get_assistant():
-    df = pd.read_csv('Acoustic_Panel_Descriptions.csv')
+    df = pd.read_csv('Acoustic_Panel_Descriptions_New.csv')
     assistants = client.beta.assistants.list().to_dict()
     vectors = client.beta.vector_stores.list().to_dict()
 
