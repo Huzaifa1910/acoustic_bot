@@ -104,14 +104,14 @@ def handle_chat_input(prompt):
 def chat_ui():
     if "messages" not in st.session_state:
         st.session_state.messages = []
-     # Get assistant response
-    response, citations = handle_chat_input("Suggest me best acoustic panels.")
+        # Get assistant response
+        response, citations = handle_chat_input("Suggest me best acoustic panels.")
+        st.session_state.messages.append({"role": "assistant", "content": response})
     
     # Display assistant response in chat message container
     # with st.chat_message("assistant"):
     #     st.markdown(response)
     # Add assistant response to chat history
-    st.session_state.messages.append({"role": "assistant", "content": response})
     # st.subheader("Ask your questions below:")
     
     # Display chat history
