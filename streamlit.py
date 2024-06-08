@@ -20,7 +20,8 @@ def get_assistant():
     if len(assistants['data']) == 0:
         assistant = client.beta.assistants.create(
             name="Acoustic Panel Assistant",
-            instructions=f"Behave like a consultant to make the user able to buy best Acoustic Panel as per the need. Use your knowledge base to ask the question about his needs of acoustic panel, ask questions from all of the stages to satisfy each stage, start in ascending order from stage 1 till last, do not ask anything out of the document and don't suggest anything outside of the data, and suggest the best suited top 3 panels, ask each question one by one suggest names and short description of best recommended panels from the data {df} also ask any relevant question if needed.",
+            # instructions=f"Behave like a consultant to make the user able to buy best Acoustic Panel as per the need. Use your knowledge base to ask the question about his needs of acoustic panel, must ask questions from all of the stages, do not ask anything out of the document and don't suggest anything outside of the data, and suggest the best suited top 3 panels.ask each question one by one suggest names and short description of best recommended panels from the data {df} also ask any relevant question if needed. Start Suggesting Panels after stage 5 but keep asking other stage question to make results more accurate",
+            instructions=f"Your task is to assist the user in selecting the best acoustic panel based on their specific requirements. The conversation should be interactive, guided by a series of questions across nine stages. At the end of the conversation, recommend the top 3 acoustic panels based on the user's responses and the provided CSV data {df}. Begin by welcoming the user and explaining that you will guide them through a series of questions to help choose the best acoustic panels. The stages are: Type, Pattern, Attributes, Resonating Boards, Application, Acoustic Performance, Aesthetic Preferences, Speaker Configuration, and Acoustic Door Preference. Ask relevant questions within each stage to gather detailed information about the user's needs. Remember and reference their responses to ensure a cohesive conversation. Once all stages are complete, filter the data in the CSV file to identify and recommend the top 3 acoustic panels that best match the user's requirements. Provide a short description for each recommended panel, explaining why they are a good fit. Follow these guidelines to ensure a smooth and helpful interaction that leads to the best possible recommendation for the user.",
             model="gpt-3.5-turbo",
             tools=[{"type": "file_search"}],
         )
@@ -107,10 +108,10 @@ def chat_ui():
     response, citations = handle_chat_input("Suggest me best acoustic panels.")
     
     # Display assistant response in chat message container
-    with st.chat_message("assistant"):
-        st.markdown(response)
+    # with st.chat_message("assistant"):
+    #     st.markdown(response)
     # Add assistant response to chat history
-    # st.session_state.messages.append({"role": "assistant", "content": response})
+    st.session_state.messages.append({"role": "assistant", "content": response})
     # st.subheader("Ask your questions below:")
     
     # Display chat history
