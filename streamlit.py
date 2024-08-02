@@ -46,7 +46,7 @@ def get_assistant():
             tool_resources={"file_search": {"vector_store_ids": [vector_store.id]}},
         )
     else:
-        assistant = client.beta.assistants.retrieve(assistants['data'][1]['id'])
+        assistant = client.beta.assistants.retrieve(assistants['data'][0]['id'])
         vector_store = client.beta.vector_stores.retrieve(vectors['data'][0]['id'])
         assistant = client.beta.assistants.update(
             assistant_id=assistant.id,
