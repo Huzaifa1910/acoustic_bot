@@ -13,7 +13,8 @@ client = OpenAI(api_key=os.getenv("OPEN_AI"))
 
 # Function to get the assistant
 def get_assistant():
-    df = pd.read_csv('Acoustic_Panel_Descriptions_New.csv')
+    # df = pd.read_csv('Acoustic_Panel_Descriptions_New.csv')
+    df = pd.read_csv('Panel Desc - Sheet1 (1).csv')
     assistants = client.beta.assistants.list().to_dict()
     vectors = client.beta.vector_stores.list().to_dict()
 
@@ -21,7 +22,16 @@ def get_assistant():
         assistant = client.beta.assistants.create(
             name="Acoustic Panel Assistant",
             # instructions=f"Behave like a consultant to make the user able to buy best Acoustic Panel as per the need. Use your knowledge base to ask the question about his needs of acoustic panel, must ask questions from all of the stages, do not ask anything out of the document and don't suggest anything outside of the data, and suggest the best suited top 3 panels.ask each question one by one suggest names and short description of best recommended panels from the data {df} also ask any relevant question if needed. Start Suggesting Panels after stage 5 but keep asking other stage question to make results more accurate",
-            instructions=f"Your task is to assist the user in selecting the best acoustic panel based on their specific requirements. The conversation should be interactive, guided by a series of questions across nine stages. At the end of the conversation, recommend the top 3 acoustic panels based on the user's responses and the provided CSV data {df}. Begin by welcoming the user and explaining that you will guide them through a series of questions to help choose the best acoustic panels. The stages are: Type, Pattern, Attributes, Resonating Boards, Application, Acoustic Performance, Aesthetic Preferences, Speaker Configuration, and Acoustic Door Preference. Ask relevant questions within each stage to gather detailed information about the user's needs. Remember and reference their responses to ensure a cohesive conversation. Once all stages are complete, filter the data in the CSV file to identify and recommend the top 3 acoustic panels that best match the user's requirements. Provide a short description for each recommended panel, explaining why they are a good fit. Follow these guidelines to ensure a smooth and helpful interaction that leads to the best possible recommendation for the user.",
+            instructions=f"""Your task is to assist the user in selecting the best acoustic panel based on their specific requirements. The conversation should be interactive, guided by a series of questions across nine stages.
+                At the end of the conversation, recommend the top 3 acoustic panels based on the user's responses along with the Link, use the data for recommendation {df}.
+                The stages are: Type, Pattern, Attributes, Resonating Boards, Application, Acoustic Performance, Aesthetic Preferences, Speaker Configuration, and Acoustic Door Preference. but do not use stage names in any of the question neither stage number question for each stage, What type of acoustic panel are you looking for: Custom Panels or Standard Panels?,  Do you prefer acoustic panels with a specific pattern, such as Tiles, Wood Grid, or Modular, or do you prefer panels without a specific pattern?, Would you like the panel to have any specific attributes, such as Curved Edges, Straight Edges, Square, Rectangular, or any other feature you have in mind?, Are you looking for panels with tuned resonating boards?, Where do you plan to use the acoustic panels? Would it be for a studio, office, home theater, or another specific location? (In Stage 6, this question should only appear IF the user is doing a music related room. If an office or home office si being done (not related to music directly), that question is not needed), Are the panels intended for a specific room type (e.g., recording room, mixing room)? Are you looking for broadband absorption panels? Do you prefer a sound profile that is bass-heavy, balanced, or enhanced for clarity?, Are you looking for panels with a modern look, a classic design, or ones that blend with your existing room decor?.  Do you intend to use this room for Dolby Atmos or surround sound? If yes, what surround configuration do you plan to use (e.g., 5.1.4, 7.1.4, 9.1.4, 11.4)? Also, what kind of speakers do you intend to use?, Do you wish to add an acoustic door to the design, so that no sound leaks outside the space? ask above questions one by one, and complete all nine stages
+                Remember and reference their responses to ensure a cohesive conversation. 
+                Once all stages are complete. Provide a short description for each recommended panel, explaining why they are a good fit. 
+                Follow these guidelines to ensure a smooth and helpful interaction that leads to the best possible recommendation for the user.
+                If the user is not sure for the answer, the explain the question and ask again you can not move on to the next stage without getting a perfect answer from user. 
+                If the user already given some information that is satisfying any other stage, you must skip that stage and move to the next stage.
+                Also if the user is using panels for music room then ask question that is about specific room type mixing room one.
+                Do not mention stage name and number in question. """,
             model="gpt-3.5-turbo",
             tools=[{"type": "file_search"}],
         )
@@ -36,7 +46,7 @@ def get_assistant():
             tool_resources={"file_search": {"vector_store_ids": [vector_store.id]}},
         )
     else:
-        assistant = client.beta.assistants.retrieve(assistants['data'][0]['id'])
+        assistant = client.beta.assistants.retrieve(assistants['data'][1]['id'])
         vector_store = client.beta.vector_stores.retrieve(vectors['data'][0]['id'])
         assistant = client.beta.assistants.update(
             assistant_id=assistant.id,
