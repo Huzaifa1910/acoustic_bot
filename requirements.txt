@@ -2,7 +2,7 @@ Flask
 requests
 python-dotenv
 pandas
-openai
+openai==1.88.0
 google-cloud-dialogflow
 tabulate
 werkzeug==0.16.0
